@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <script>
   const params = new URLSearchParams(window.location.search)
   async function load() {
@@ -5,11 +6,7 @@
   var user = params.get('user')
   const response = await fetch('api.scratch.mit.edu/users/'+ user + 'messages/count');
   const data = await response.json();
-  var j = document.createElement("h1");
-    j.innerText = data;
-  var myHTML= j.innerText;
-var strippedHtml = myHTML.replace(/<[^>]+>/g, '');
-j.innerText = stripedHtml;
+  document.write(data)
 }
 load();
   </script>
