@@ -12,7 +12,7 @@
   var user = "wojtekgame";
   const response = await fetch('api.scratch.mit.edu/users/'+ user);
   const data = await response.json();
-  document.write(json.parse(data))
+  document.innerText(json.parse(data));
   }
 }
 load();
