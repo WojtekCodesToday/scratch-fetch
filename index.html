@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<body>
+<script>
+  async function load() {
+  const params = new URLSearchParams(window.location.search)
+  if (params.has('url')){
+  var user = params.get('url');
+  const response = await fetch('api.scratch.mit.edu/users/'+ user);
+  const data = await response.json();
+  document.write(data)
+} else {
+  var user = "wojtekgame";
+  const response = await fetch('api.scratch.mit.edu/users/'+ user);
+  const data = await response.json();
+  document.write(data)
+}
+load();
+</script>
+</body>
