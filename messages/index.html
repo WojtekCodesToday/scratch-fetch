@@ -1,0 +1,15 @@
+<script>
+  const params = new URLSearchParams(window.location.search)
+  async function load() {
+  if (params.has('user')){
+  var user = params.get('user')
+  const response = await fetch('api.scratch.mit.edu/users/'+ user + 'messages/count');
+  const data = await response.json();
+  var j = document.createElement("h1");
+    j.innerText = data;
+  var myHTML= j.innerText;
+var strippedHtml = myHTML.replace(/<[^>]+>/g, '');
+j.innerText = stripedHtml;
+}
+load();
+  </script>
